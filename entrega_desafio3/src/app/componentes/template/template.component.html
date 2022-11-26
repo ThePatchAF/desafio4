@@ -1,0 +1,106 @@
+<header class="container-header">
+  <div class="fila row-1">
+    <div class="logo">
+      <img src="../../../assets/img/logo__large_plus.png" width="134px" height="34px">
+    </div>
+    <div>
+      <form class="nav-buscar" action="#">
+        <input type="text" class="nav-buscar-input"
+        name="as_word" placeholder="Buscar productos, marcas y más…"
+        maxlength="120" autofocus=""
+        autocapitalize="off"
+        autocorrect="off" spellcheck="false"
+        autocomplete="off" tabindex="2"
+        value="" aria-activedescendant=""
+        [(ngModel)]="busqueda"
+        id="input-search">
+        <button type="submit"
+        class="nav-buscar-btn"><img src="../../../assets/img/lupa.png" width="16px" height="16px"></button>
+
+      </form>
+    </div>
+    <div>
+      <a href="#">
+        <img src="../../../assets/img/img-delivery.png" width="330px" height="30px">
+      </a>
+    </div>
+  </div>
+  <div class="fila row-2 ">
+    <div class="nav-menu nav-category">
+
+        <ul class="nav-menu-lista">
+          <li class="nav-menu-it"><a href="#">Categorias <img src="../../../assets/img/flecha-hacia-abajo.png" width="8px" height="8px"></a></li>
+          <li class="nav-menu-it"><a href="#">Historial</a></li>
+          <li class="nav-menu-it"><a href="#">Tiendas Oficiales</a></li>
+          <li class="nav-menu-it"><a href="#">Ofertas de la Semana</a></li>
+          <li class="nav-menu-it"><a href="#">Vender</a></li>
+          <li class="nav-menu-it"><a href="#">Ayuda</a></li>
+        </ul>
+    </div>
+    <div class="nav-user">
+      <nav class="nav-menu">
+        <ul class="nav-menu-lista">
+          <li class="nav-menu-it"><a href="#"><img src="../../../assets/img/usuario.png" width="20px" height="20px">Anthony<img src="../../../assets/img/flecha-hacia-abajo.png" width="8px" height="8px"></a></li>
+          <li class="nav-menu-it"><a href="#">Mis Compras</a></li>
+          <li class="nav-menu-it"><a href="#">Favoritos <img src="../../../assets/img/flecha-hacia-abajo.png" width="8px" height="8px"></a></li>
+          <li class="nav-menu-it"><a href="#"><img src="../../../assets/img/campana.png" width="20px" height="20px"></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="contenedor">
+  <div class="banner">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="Random first slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="Random second slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Random third slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <section class="listado">
+    <!-- h1 condicionado -->
+    <h1 class="busqueda" *ngIf="busqueda!=''">Busqueda: {{busqueda}}</h1>
+    <!-- cards de productos -->
+    <h1 class="title-ofertas">Productos en Oferta </h1>
+    <div class="ofertas">
+      <div *ngFor="let producto of productos" class="producto">
+        <mat-card class="example-card">
+          <img mat-card-image [src]="producto.imagenURL" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <mat-card-title>{{producto.nombre}}</mat-card-title>
+            <mat-card-subtitle>Bs. {{producto.precio}}</mat-card-subtitle>
+            <p class="envio" *ngIf="producto.tipoEnvio=='Gratis'" style="color: #18AE60">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="local_shipping">local_shipping</mat-icon>Envío Gratis
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+
+</div>

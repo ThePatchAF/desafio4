@@ -13,8 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { TemplateComponent } from './componentes/template/template.component';
 import { FormsModule } from "@angular/forms";
-import { DescripcionComponent } from './descripcion/descripcion.component';
-import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     HeaderComponent,
     SliderComponent,
     ProductosComponent,
-    TemplateComponent,
-    DescripcionComponent
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +31,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule,
-    MatTabsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
