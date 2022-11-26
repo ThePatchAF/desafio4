@@ -15,6 +15,7 @@ import { TemplateComponent } from './componentes/template/template.component';
 import { FormsModule } from "@angular/forms";
 import { DescripcionComponent } from './descripcion/descripcion.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     SliderComponent,
     ProductosComponent,
     TemplateComponent,
-    DescripcionComponent
+    DescripcionComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
